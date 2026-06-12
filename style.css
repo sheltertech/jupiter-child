@@ -9,18 +9,6 @@ Text Domain: mk_framework
 Domain Path: /languages/
 */
 
-
-
-/*
-Sample : remove the comment and start adding your own custom CSS rules.
-
-body {
-	background-color:#fff;
-}
-
-
-*/
-
 /* Milo homepage hero */
 .milo-hero-banner {
   display: flex;
