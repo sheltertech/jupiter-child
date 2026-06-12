@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<?php get_template_part( 'components/milo-hero' ); ?>
+<!-- <?php get_template_part( 'components/milo-hero' ); ?> -->
 
 <?php
 while ( have_posts() ) :
