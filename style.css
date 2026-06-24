@@ -66,11 +66,11 @@ Domain Path: /languages/
 }
 
 .milo-hero-btn-adopt {
-  background: #000000;
+  background: #f47b2a;
 }
 
 .milo-hero-btn-adopt:hover {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(244, 123, 42, 0.85);
   color: #fff;
 }
 
