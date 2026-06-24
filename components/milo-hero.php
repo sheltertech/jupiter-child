@@ -1,5 +1,5 @@
 <section class="milo-hero">
-    <div class="milo-hero-banner">
+    <div class="milo-hero-image">
         <div class="milo-hero-text">
             <p class="milo-hero-heading">Welcome to Milo Foundation</p>
             <p class="milo-hero-subheading">Help save a homeless pet today!</p>
@@ -11,6 +11,4 @@
             <a class="milo-hero-btn" href="/donate/">Support &gt;</a>
         </div>
     </div>
-
-    <div class="milo-hero-image" aria-hidden="true"></div>
 </section>

@@ -10,13 +10,18 @@ Domain Path: /languages/
 */
 
 /* Milo homepage hero */
-.milo-hero-banner {
+.milo-hero-image {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background-color: #afbc26;
+  min-height: 550px;
   padding: 16px 48px;
+  box-sizing: border-box;
+  background-image: url('/wp-content/uploads/2026/02/hueser024-scaled-e1773116240641.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .milo-hero-text {
@@ -27,8 +32,10 @@ Domain Path: /languages/
 .milo-hero-subheading {
   margin: 0;
   color: #fff;
+  font-family: Tahoma, sans-serif;
   font-size: 16px;
   line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .milo-hero-buttons {
@@ -59,24 +66,16 @@ Domain Path: /languages/
 }
 
 .milo-hero-btn-adopt {
-  background: #3b82f6;
+  background: #000000;
 }
 
 .milo-hero-btn-adopt:hover {
-  background: rgba(59, 130, 246, 0.85);
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
 }
 
-.milo-hero-image {
-  min-height: 550px;
-  background-image: url('/wp-content/uploads/2026/02/hueser024-scaled-e1773116240641.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 @media (max-width: 767px) {
-  .milo-hero-banner {
+  .milo-hero-image {
     flex-direction: column;
     align-items: flex-start;
     padding: 16px 24px;
