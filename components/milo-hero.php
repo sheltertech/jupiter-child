@@ -6,7 +6,7 @@
         </div>
 
         <div class="milo-hero-buttons">
-            <a class="milo-hero-btn milo-hero-btn-adopt" href="/pet-adoption-application/">Adopt &gt;</a>
+            <a class="milo-hero-btn" href="/pet-adoption-application/">Adopt &gt;</a>
             <a class="milo-hero-btn" href="/dog-cat-foster-program/">Foster &gt;</a>
             <a class="milo-hero-btn" href="/donate/">Support &gt;</a>
         </div>

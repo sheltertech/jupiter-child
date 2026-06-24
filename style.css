@@ -58,15 +58,6 @@ Domain Path: /languages/
   color: #fff;
 }
 
-.milo-hero-btn-adopt {
-  background: #ec4899;
-}
-
-.milo-hero-btn-adopt:hover {
-  background: rgba(236, 72, 153, 0.85);
-  color: #fff;
-}
-
 .milo-hero-image {
   min-height: 550px;
   background-image: url('/wp-content/uploads/2026/02/hueser024-scaled-e1773116240641.jpg');
