@@ -10,71 +10,165 @@ Domain Path: /languages/
 */
 
 /* Milo homepage hero */
-.milo-hero-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  background-color: #afbc26;
-  padding: 16px 48px;
-}
-
-.milo-hero-text {
-  flex: 1;
-}
-
-.milo-hero-heading,
-.milo-hero-subheading {
-  margin: 0;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.3;
-}
-
-.milo-hero-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.milo-hero-btn {
-  display: inline-block;
-  width: 130px;
-  text-align: center;
-  padding: 12px 8px;
-  border-radius: 999px;
-  background: #f47b2a;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
+.milo-hero {
+  position: relative;
+  min-height: 460px;
+  margin-bottom: 0;
+  padding: 48px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.milo-hero-btn:hover {
-  background: rgba(244, 123, 42, 0.85);
-  color: #fff;
+.milo-hero__media,
+.milo-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.milo-hero-image {
-  min-height: 550px;
-  background-image: url('/wp-content/uploads/2026/02/hueser024-scaled-e1773116240641.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.milo-hero__image {
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.milo-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.milo-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.milo-hero__heading,
+.milo-hero__subheading {
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.milo-hero__heading {
+  font-size: clamp(2rem, 4vw, 3.125rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.milo-hero__subheading {
+  margin-top: 12px;
+  font-size: clamp(1.125rem, 2vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.milo-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.milo-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.milo-hero__btn--primary {
+  border: 2px solid #f47b2a;
+  background-color: #f47b2a;
+  color: #ffffff;
+}
+
+.milo-hero__btn--primary:hover,
+.milo-hero__btn--primary:focus-visible {
+  background-color: #e06a1a;
+  border-color: #e06a1a;
+  color: #ffffff;
+}
+
+.milo-hero__btn--secondary {
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.milo-hero__btn--secondary:hover,
+.milo-hero__btn--secondary:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.milo-hero__btn:focus {
+  outline: none;
+}
+
+.milo-hero__btn:focus-visible {
+  outline: 3px solid #afbc26;
+  outline-offset: 3px;
 }
 
 @media (max-width: 767px) {
-  .milo-hero-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 24px;
+  .milo-hero {
+    min-height: 360px;
+    padding: 24px;
   }
 
-  .milo-hero-buttons {
-    justify-content: flex-start;
+  .milo-hero__image {
+    object-position: center 38%;
+  }
+
+  .milo-hero__content {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+
+  .milo-hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .milo-hero__btn {
     width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .milo-hero__btn {
+    transition: none;
   }
 }
