@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="milo-banner">
-	<h1>
+	<h2>
 		Milo Point Richmond is closing for renovations! Labor Day, Monday, September 7th, we close at 5pm, hoping all dogs and cats are adopted or in foster. We re-open early October! It will be exiting, shiny and new!
-	</h1>
+	</h2>
 </section>
