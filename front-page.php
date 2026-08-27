@@ -2,6 +2,7 @@
 get_header();
 ?>
 
+<?php get_template_part( 'components/milo-banner' ); ?>
 <?php get_template_part( 'components/milo-hero' ); ?>
 
 <?php

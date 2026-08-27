@@ -172,3 +172,8 @@ Domain Path: /languages/
     transition: none;
   }
 }
+
+.milo-banner {
+  background-color: #F7F7F7;
+  text-align: center;
+}
