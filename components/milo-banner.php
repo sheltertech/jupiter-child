@@ -12,5 +12,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <p class="milo-banner">
-	Milo Point Richmond is closing for renovations! Labor Day, Monday, September 7th, we close at 5pm, hoping all dogs and cats are adopted or in foster. We re-open early October! It will be exiting, shiny and new!
+	<b>Milo Point Richmond is closing for renovations!</b> Labor Day, Monday, September 7th, we close at 5pm, hoping all dogs and cats are adopted or in foster. We re-open early October! It will be exiting, shiny and new!
 </p>
