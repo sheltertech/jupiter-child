@@ -193,5 +193,6 @@ Domain Path: /languages/
 }
 
 .milo-banner__adoption-message {
+  font-weight: bold;
   font-size: 26px;
 }
