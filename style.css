@@ -183,6 +183,7 @@ Domain Path: /languages/
   line-height: 1.3em;
 }
 
+.milo-banner__announcement,
 .milo-banner__adoption-message {
   margin: 0;
 }
@@ -192,5 +193,5 @@ Domain Path: /languages/
 }
 
 .milo-banner__adoption-message {
-  font-size: 20px;
+  font-size: 26px;
 }
