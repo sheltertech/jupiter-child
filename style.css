@@ -106,17 +106,19 @@ Domain Path: /languages/
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+/* Near-black rather than white on the brand orange: white reaches only 2.72:1
+   here, short of AA for the button's 14px bold label. */
 .milo-hero__btn--primary {
   border: 2px solid #f47b2a;
   background-color: #f47b2a;
-  color: #ffffff;
+  color: #1a1a1a;
 }
 
 .milo-hero__btn--primary:hover,
 .milo-hero__btn--primary:focus-visible {
   background-color: #e06a1a;
   border-color: #e06a1a;
-  color: #ffffff;
+  color: #1a1a1a;
 }
 
 .milo-hero__btn--secondary {

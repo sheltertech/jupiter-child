@@ -1,45 +1,142 @@
-/* Milo homepage event announcement */
+/* Milo homepage event announcements */
 .milo-event {
   padding: 30px 40px;
   color: black;
-  background-color: #2e7d3e;
+  background-color: #cdddc4;
   text-align: center;
   line-height: 1.3em;
 }
 
-.milo-event__inner {
-  max-width: 860px;
+.milo-event__eyebrow {
+  margin: 0 0 24px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.milo-event__list {
+  display: grid;
+  grid-template-columns: minmax(0, 860px);
+  justify-content: center;
+  gap: 26px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 36px 30px 40px 30px;
-  background-color: #f7f3e3;
+  padding: 0;
+  list-style: none;
+}
+
+.milo-event__item {
+  margin: 0;
+  padding: 32px 26px 36px 26px;
+  background-color: #fcf9e8;
   border-radius: 10px;
 }
 
-.milo-event__eyebrow {
-  margin: 0 0 16px;
-  color: #f47b2a;
-  font-weight: bold;
-  font-size: 20px;
+/*
+ * Side by side once there is room for two readable columns. Each card becomes a
+ * subgrid of the six shared rows below, so the date, address and photos line up
+ * across cards even though only one card carries a description and a note. Row
+ * spacing stays on the elements' own margins, which is why row-gap is zero:
+ * gaps would otherwise pad out the rows the shorter card leaves empty.
+ */
+@media (min-width: 900px) {
+  .milo-event__list--pair {
+    grid-template-columns: repeat(2, minmax(0, 560px));
+    grid-template-rows: repeat(6, auto);
+    column-gap: 26px;
+    row-gap: 0;
+  }
+
+  .milo-event__list--pair .milo-event__item {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 1 / span 6;
+  }
+
+  .milo-event__list--pair .milo-event__item:nth-child(1) {
+    grid-column: 1;
+  }
+
+  .milo-event__list--pair .milo-event__item:nth-child(2) {
+    grid-column: 2;
+  }
+
+  .milo-event__list--pair .milo-event__details {
+    grid-row: 1;
+  }
+
+  .milo-event__list--pair .milo-event__title {
+    grid-row: 2;
+  }
+
+  .milo-event__list--pair .milo-event__description {
+    grid-row: 3;
+  }
+
+  .milo-event__list--pair .milo-event__location {
+    grid-row: 4;
+  }
+
+  .milo-event__list--pair .milo-event__note {
+    grid-row: 5;
+  }
+
+  .milo-event__list--pair .milo-event__photos {
+    grid-row: 6;
+    align-self: end;
+  }
+}
+
+/* A lone event keeps the wider single-poster proportions. */
+.milo-event__item:only-child {
+  padding: 36px 30px 40px 30px;
 }
 
 .milo-event__title {
-  margin: 0;
-  color: #2e7d3e;
-  font-size: 30px;
+  margin: 14px 0 0;
+  color: #0d6703;
+  font-size: 26px;
   line-height: 1.45;
+}
+
+.milo-event__item:only-child .milo-event__title {
+  font-size: 30px;
+}
+
+.milo-event__description {
+  margin: 18px 0 0;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .milo-event__details {
-  margin: 22px 0 0;
+  margin: 0;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 23px;
   line-height: 1.35;
 }
 
+.milo-event__item:only-child .milo-event__details {
+  font-size: 26px;
+}
+
 .milo-event__location {
-  margin: 12px 0 0;
-  font-size: 20px;
+  margin: 16px 0 0;
+  font-size: 19px;
   line-height: 1.45;
+}
+
+/* The brand orange darkened along the same hue: #f47b2a reaches only 2.45:1 on
+   cream, short of AA at any size. */
+.milo-event__note {
+  margin: 18px 0 0;
+  color: #ab561d;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 1.4;
 }
 
 .milo-event__photos {
@@ -47,19 +144,21 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 14px;
-  margin: 30px 0 0;
+  margin: 26px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .milo-event__photo {
+  flex: 0 1 220px;
   margin: 0;
 }
 
 .milo-event__photo img {
   display: block;
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 35%;
 }
@@ -69,19 +168,31 @@
     padding: 14px;
   }
 
-  .milo-event__inner {
+  .milo-event__eyebrow {
+    margin-bottom: 16px;
+    font-size: 19px;
+  }
+
+  .milo-event__list {
+    gap: 16px;
+  }
+
+  .milo-event__item,
+  .milo-event__item:only-child {
     padding: 26px 16px 30px 16px;
   }
 
-  .milo-event__eyebrow {
-    font-size: 17px;
-  }
-
-  .milo-event__title {
+  .milo-event__title,
+  .milo-event__item:only-child .milo-event__title {
     font-size: 24px;
   }
 
-  .milo-event__details {
+  .milo-event__description {
+    font-size: 17px;
+  }
+
+  .milo-event__details,
+  .milo-event__item:only-child .milo-event__details {
     font-size: 21px;
   }
 
@@ -89,8 +200,11 @@
     font-size: 17px;
   }
 
-  .milo-event__photo img {
-    width: 150px;
-    height: 150px;
+  .milo-event__note {
+    font-size: 17px;
+  }
+
+  .milo-event__photo {
+    flex-basis: 150px;
   }
 }
