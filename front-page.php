@@ -4,6 +4,7 @@ get_header();
 
 <?php get_template_part( 'components/milo-banner' ); ?>
 <?php get_template_part( 'components/milo-hero' ); ?>
+<?php get_template_part( 'components/milo-event' ); ?>
 
 <?php
 while ( have_posts() ) :

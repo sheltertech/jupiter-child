@@ -10,6 +10,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Enqueue the event announcement styles.
+ *
+ * @return void
+ */
+function milo_enqueue_event_styles() {
+	$relative = '/components/milo-event.css';
+	$path     = get_stylesheet_directory() . $relative;
+
+	if ( ! file_exists( $path ) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'milo-event',
+		get_stylesheet_directory_uri() . $relative,
+		array(),
+		filemtime( $path )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'milo_enqueue_event_styles', 20 );
+
+/**
  * Register Customizer settings for the homepage hero.
  *
  * @param WP_Customize_Manager $wp_customize Customizer instance.
