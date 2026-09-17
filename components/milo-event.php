@@ -9,8 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// The announcement removes itself once the event has ended.
-$event_end = new DateTimeImmutable( '2026-09-19 14:00', wp_timezone() );
+// The announcement removes itself once the event has ended. The event time is
+// Pacific, while the site's timezone setting is UTC, so state the zone here.
+$event_end = new DateTimeImmutable( '2026-09-19 14:00', new DateTimeZone( 'America/Los_Angeles' ) );
 
 if ( current_datetime() > $event_end ) {
 	return;
