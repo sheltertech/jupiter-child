@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="milo-banner">
 	<p class="milo-banner__announcement">
-		<b>Milo Foundation is reopening after our renovation on Saturday, October 10!</b> We will resume our usual hours of 11am to 5pm. Beginning Saturday, adoptions, walk-ins and visits to the newly improved Milo Adoption Center will officially resume!
+		<?php echo wp_kses_post( __( '<b>Open for adoptions, fostering, and volunteering</b> Sunday, Monday, Wednesday, and Thursday, 11am-6pm and Friday and Saturday, 11am-5pm. Closed Tuesdays.', 'mk_framework' ) ); ?>
 	</p>
 	<p class="milo-banner__adoption-message">
-		We have puppies, dogs, and kitties waiting to meet you and hoping to find their forever home. We look forward to welcoming everyone back!
+		<?php echo esc_html__( 'Volunteers always encouraged! Come meet our fabulous rescued animals!', 'mk_framework' ); ?>
 	</p>
 </div>
