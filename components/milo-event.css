@@ -88,6 +88,15 @@
     grid-row: 6;
     align-self: end;
   }
+
+  /*
+   * Three equal cards without subgrid: optional description/note fields make
+   * cross-card row alignment fragile once a third card is in play.
+   */
+  .milo-event__list--triple {
+    grid-template-columns: repeat(3, minmax(0, 360px));
+    gap: 26px;
+  }
 }
 
 /* A lone event keeps the wider single-poster proportions. */
