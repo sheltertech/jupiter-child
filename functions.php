@@ -175,3 +175,55 @@ function milo_hero_customize_register( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'milo_hero_customize_register' );
+
+/**
+ * Register Customizer settings for the homepage banner.
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
+ * @return void
+ */
+function milo_banner_customize_register( $wp_customize ) {
+	$wp_customize->add_section(
+		'milo_banner',
+		array(
+			'title'       => __( 'Homepage Banner', 'mk_framework' ),
+			'description' => __( 'Controls the announcement banner at the top of the homepage.', 'mk_framework' ),
+			'priority'    => 31,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'milo_banner_announcement',
+		array(
+			'default'           => __( '<b>Open for adoptions, fostering, and volunteering</b> Sunday, Monday, Wednesday, and Thursday, 11am-6pm and Friday and Saturday, 11am-5pm. Closed Tuesdays.', 'mk_framework' ),
+			'sanitize_callback' => 'wp_kses_post',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		'milo_banner_announcement',
+		array(
+			'label'   => __( 'Announcement', 'mk_framework' ),
+			'section' => 'milo_banner',
+			'type'    => 'textarea',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'milo_banner_adoption_message',
+		array(
+			'default'           => __( 'Volunteers always encouraged! Come meet our fabulous rescued animals!', 'mk_framework' ),
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		'milo_banner_adoption_message',
+		array(
+			'label'   => __( 'Adoption message', 'mk_framework' ),
+			'section' => 'milo_banner',
+			'type'    => 'text',
+		)
+	);
+}
+add_action( 'customize_register', 'milo_banner_customize_register' );
